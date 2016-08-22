@@ -19,7 +19,7 @@ public class Main {
         String encryptedText = null;
         try {
             encryptedText = encriptDecript.encrypt(mixedFlowers.getBouquet().toString(), offset);
-        } catch (RuntimeException e) {
+        } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }
 
@@ -28,7 +28,7 @@ public class Main {
         String decryptedText = null;
         try {
             decryptedText = encriptDecript.decrypt(encryptedText, offset);
-        } catch (RuntimeException e) {
+        } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }
         System.out.println("\nРасшифрованный букет\n" + decryptedText);

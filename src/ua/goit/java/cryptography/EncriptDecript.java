@@ -1,9 +1,9 @@
 package ua.goit.java.cryptography;
 
 public class EncriptDecript {
-    public String encrypt(String text, int offset) throws RuntimeException {
+    public String encrypt(String text, int offset) throws IllegalArgumentException {
         if (text.isEmpty()) {
-            throw new RuntimeException("Пустая строка. Введите не пустую строку");
+            throw new IllegalArgumentException("Пустая строка. Введите не пустую строку");
         }
 
         StringBuilder res = new StringBuilder();
@@ -15,9 +15,9 @@ public class EncriptDecript {
         return new String(res);
     }
 
-    public String decrypt(String text, int offset) throws RuntimeException {
+    public String decrypt(String text, int offset) throws IllegalArgumentException {
         if (text.isEmpty()) {
-            throw new RuntimeException("Пустая строка. Введите не пустую строку");
+            throw new IllegalArgumentException("Пустая строка. Введите не пустую строку");
         }
         StringBuilder res = new StringBuilder();
 
