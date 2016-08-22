@@ -3,15 +3,15 @@ package ua.goit.java.flower;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Flowers {
+public class Bouquet {
     private final static int MAX_NUM_FLOWERS = 5;
 
     private String name;
     private int numFlowers;
-    private List<Flower> bouquet;
+    private List<Flower> flowers;
 
-    public Flowers() {
-        bouquet = new ArrayList<>(MAX_NUM_FLOWERS);
+    public Bouquet() {
+        flowers = new ArrayList<>(MAX_NUM_FLOWERS);
     }
 
     public String getName() {
@@ -23,24 +23,24 @@ public class Flowers {
     }
 
     public Flower getFlower(int index) {
-        return bouquet.get(index);
+        return flowers.get(index);
     }
 
     public int getNumFlowers() {
-        return bouquet.size();
-    }
-
-    public List<Flower> getBouquet() {
-        return bouquet;
+        return flowers.size();
     }
 
     public void addFlower(Flower flower) {
-        bouquet.add(flower);
+        flowers.add(flower);
+    }
+
+    public List<Flower> getFlowers() {
+        return flowers;
     }
 
     public void listFlowers() {
-        if (bouquet != null) {
-            for (Flower f : bouquet) {
+        if (flowers != null) {
+            for (Flower f : flowers) {
                 System.out.println(f.getName() + " " + f.getColor());
             }
         }
