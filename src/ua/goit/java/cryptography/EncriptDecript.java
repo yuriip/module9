@@ -43,9 +43,6 @@ public class EncriptDecript {
     }
 
     private boolean isTextValid(String text) {
-        if (text == null || text.isEmpty()) {
-            return false;
-        }
-        return true;
+        return text != null && !text.isEmpty();
     }
 }
