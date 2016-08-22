@@ -1,9 +1,10 @@
-package ua.goit.java.service;
+package ua.goit.java.cryptography;
 
 public class EncriptDecript {
-    public String encrypt(String text, int offset) throws Exception {
-        if (text.isEmpty())
-            throw new Exception("Пустая строка. Введите не пустую строку");
+    public String encrypt(String text, int offset) throws RuntimeException {
+        if (text.isEmpty()) {
+            throw new RuntimeException("Пустая строка. Введите не пустую строку");
+        }
 
         StringBuilder res = new StringBuilder();
 
@@ -14,9 +15,9 @@ public class EncriptDecript {
         return new String(res);
     }
 
-    public String decrypt(String text, int offset) throws Exception {
+    public String decrypt(String text, int offset) throws RuntimeException {
         if (text.isEmpty()) {
-            throw new Exception("Пустая строка. Введите не пустую строку");
+            throw new RuntimeException("Пустая строка. Введите не пустую строку");
         }
         StringBuilder res = new StringBuilder();
 

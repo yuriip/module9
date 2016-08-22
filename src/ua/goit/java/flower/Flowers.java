@@ -3,17 +3,15 @@ package ua.goit.java.flower;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Bouquet {
+public class Flowers {
     private final static int MAX_NUM_FLOWERS = 5;
 
     private String name;
     private int numFlowers;
     private List<Flower> bouquet;
 
-    public Bouquet(String name, Flower flower) {
-        this.name = name;
+    public Flowers() {
         bouquet = new ArrayList<>(MAX_NUM_FLOWERS);
-        bouquet.add(flower);
     }
 
     public String getName() {

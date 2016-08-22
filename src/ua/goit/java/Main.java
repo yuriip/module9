@@ -1,36 +1,36 @@
 package ua.goit.java;
 
 import ua.goit.java.flower.*;
-import ua.goit.java.service.EncriptDecript;
+import ua.goit.java.cryptography.EncriptDecript;
 
 public class Main {
     public static void main(String[] args) {
-        Bouquet mixedBouquet = new Bouquet("Букет с разными цветами", new AstraFlower("Астра", "оранжевая"));
-        mixedBouquet.addFlower(new DaisyFlower("Ромашка", "белая"));
-        mixedBouquet.addFlower(new RoseFlower("Роза", "красная"));
-        mixedBouquet.addFlower(new TulipFlower("Тюльпан", "желтый"));
-        mixedBouquet.addFlower(new TulipFlower("Тюльпан", "розовый"));
+        Flowers mixedFlowers = new Flowers();
+        mixedFlowers.getBouquet().add(new DaisyFlower("Ромашка", "белая"));
+        mixedFlowers.getBouquet().add(new RoseFlower("Роза", "красная"));
+        mixedFlowers.getBouquet().add(new TulipFlower("Тюльпан", "желтый"));
+        mixedFlowers.getBouquet().add(new TulipFlower("Тюльпан", "розовый"));
 
-        System.out.println(mixedBouquet.getName() + "\n" + mixedBouquet.getBouquet().toString());
+        System.out.println("Букет с разными цветами\n" + mixedFlowers.getBouquet().toString());
 
         EncriptDecript encriptDecript = new EncriptDecript();
         int offset = 7;
 
-        String encriptTextList = null;
+        String encryptedText = null;
         try {
-            encriptTextList = encriptDecript.encrypt(mixedBouquet.getBouquet().toString(), offset);
-        } catch (Exception e) {
+            encryptedText = encriptDecript.encrypt(mixedFlowers.getBouquet().toString(), offset);
+        } catch (RuntimeException e) {
             System.out.println(e.getMessage());
         }
 
-        System.out.println("\nЗашифрованный букет\n" + encriptTextList);
+        System.out.println("\nЗашифрованный букет\n" + encryptedText);
 
-        String decriptTextList = null;
+        String decryptedText = null;
         try {
-            decriptTextList = encriptDecript.decrypt(encriptTextList, offset);
-        } catch (Exception e) {
+            decryptedText = encriptDecript.decrypt(encryptedText, offset);
+        } catch (RuntimeException e) {
             System.out.println(e.getMessage());
         }
-        System.out.println("\nРасшифрованный букет\n" + decriptTextList);
+        System.out.println("\nРасшифрованный букет\n" + decryptedText);
     }
 }
